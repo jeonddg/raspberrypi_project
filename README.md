@@ -1,7 +1,14 @@
 # Raspberry Pi AI Smart Humidifier Project
 
-AI 기반 실내 습도 예측 스마트 자동 가습 시스템 프로젝트입니다.
+Raspberry Pi와 AI 습도 예측 모델을 활용한 스마트 자동 가습기 시스템 프로젝트입니다.
 
 ## Project Plan
 
-자세한 기획서는 [PROJECT_PLAN.md](./PROJECT_PLAN.md)에서 확인할 수 있습니다.
+- [Markdown 기획서](./PROJECT_PLAN.md)
+- [HTML 기획서](./project-plan/index.html)
+
+GitHub Pages로 배포하면 아래와 같은 주소로 포트폴리오 페이지처럼 볼 수 있습니다.
+
+```text
+https://jeonddg.github.io/raspberrypi_project/project-plan/
+```

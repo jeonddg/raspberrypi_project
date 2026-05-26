@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Raspberry Pi AI Smart Humidifier Project Plan</title>
+    <meta name="description" content="Raspberry Pi 기반 AI 실내 습도 예측 스마트 자동 가습기 시스템 기획서">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="프로젝트 계획서 맨 위로 이동">
+        <span class="brand-mark">RP</span>
+        <span>AI Smart Humidifier</span>
+      </a>
+
+      <nav class="top-nav" aria-label="주요 섹션">
+        <a href="#overview">개요</a>
+        <a href="#architecture">구조</a>
+        <a href="#features">기능</a>
+        <a href="#ai-model">AI 모델</a>
+        <a href="#roadmap">일정</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="다크 모드 전환">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+        <span class="theme-text">Dark</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Raspberry Pi · AIoT · Humidity Prediction</p>
+          <h1>AI 기반 실내 습도 예측 스마트 자동 가습기 시스템</h1>
+          <p class="hero-description">
+            Raspberry Pi로 실내 환경과 물 수위를 측정하고, OpenWeatherMap API와 AI 예측 모델을
+            결합해 가습기 동작을 자동 제어하는 프로젝트입니다.
+          </p>
+          <div class="hero-actions" aria-label="문서 링크">
+            <a class="button primary" href="../PROJECT_PLAN.md">Markdown 기획서</a>
+            <a class="button secondary" href="https://github.com/jeonddg/raspberrypi_project">GitHub 저장소</a>
+          </div>
+        </div>
+
+        <aside class="status-panel" aria-label="프로젝트 핵심 지표">
+          <div>
+            <span class="metric-label">Prediction</span>
+            <strong>10분 후 습도</strong>
+          </div>
+          <div>
+            <span class="metric-label">Controller</span>
+            <strong>Raspberry Pi GPIO</strong>
+          </div>
+          <div>
+            <span class="metric-label">Dashboard</span>
+            <strong>Flask Web UI</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section id="overview" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">01 Overview</p>
+          <h2>프로젝트 개요</h2>
+        </div>
+        <div class="content-grid">
+          <article class="content-card">
+            <h3>목표</h3>
+            <p>
+              현재 습도만 기준으로 켜지고 꺼지는 단순 가습기보다 똑똑한 제어 시스템을 구현합니다.
+              실내 온습도, 외부 날씨, 최근 습도 변화량, 물 수위 상태를 함께 고려해 가습 필요성을
+              판단합니다.
+            </p>
+          </article>
+          <article class="content-card">
+            <h3>핵심 아이디어</h3>
+            <p>
+              AI 모델이 10분 후 실내 습도를 예측하고, 예측 결과가 건조 범위로 내려갈 가능성이 높으면
+              가습기를 미리 동작시킵니다. 물 부족이나 과습 상황에서는 안전하게 가습을 중단합니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">02 Architecture</p>
+          <h2>전체 시스템 구조</h2>
+        </div>
+        <div class="flow">
+          <div class="flow-item">
+            <span>Input</span>
+            <strong>DHT11/DHT22, Water Sensor, Weather API</strong>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-item">
+            <span>Process</span>
+            <strong>Raspberry Pi, AI Model, Control Logic</strong>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-item">
+            <span>Output</span>
+            <strong>Humidifier, LCD, LED, Buzzer, Dashboard</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">03 Features</p>
+          <h2>주요 기능</h2>
+        </div>
+        <div class="feature-list">
+          <article>
+            <h3>실내 온습도 측정</h3>
+            <p>DHT 센서로 현재 실내 온도와 습도를 측정하고 LCD와 대시보드에 표시합니다.</p>
+          </article>
+          <article>
+            <h3>외부 날씨 연동</h3>
+            <p>OpenWeatherMap API로 외부 온도, 습도, 날씨 상태를 가져와 예측 보조 데이터로 사용합니다.</p>
+          </article>
+          <article>
+            <h3>물 수위 감지</h3>
+            <p>Water Detection Sensor와 PCF8591 ADC를 사용해 물 부족 상태를 감지합니다.</p>
+          </article>
+          <article>
+            <h3>자동 제어</h3>
+            <p>릴레이 모듈로 초음파 가습 모듈 전원을 제어하고, 경고 상황은 LED와 부저로 알립니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="ai-model" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">04 AI Model</p>
+          <h2>AI 습도 예측 모델</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>입력 데이터</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>indoor_temp</td>
+                <td>현재 실내 온도</td>
+              </tr>
+              <tr>
+                <td>indoor_humidity</td>
+                <td>현재 실내 습도</td>
+              </tr>
+              <tr>
+                <td>outdoor_temp / outdoor_humidity</td>
+                <td>외부 날씨 API 데이터</td>
+              </tr>
+              <tr>
+                <td>humidity_change_5min</td>
+                <td>최근 5분간 습도 변화량</td>
+              </tr>
+              <tr>
+                <td>humidifier_state / water_level</td>
+                <td>가습기 동작 상태와 물 수위</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="roadmap" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">05 Roadmap</p>
+          <h2>구현 단계</h2>
+        </div>
+        <ol class="timeline">
+          <li><span>1</span>센서 및 하드웨어 개별 테스트</li>
+          <li><span>2</span>가습 모듈 릴레이 제어 구현</li>
+          <li><span>3</span>OpenWeatherMap API 연동</li>
+          <li><span>4</span>습도 데이터 저장 및 학습 데이터 구성</li>
+          <li><span>5</span>AI 예측 모델 학습 및 저장</li>
+          <li><span>6</span>통합 제어 로직 구현</li>
+          <li><span>7</span>Flask 대시보드 제작</li>
+          <li><span>8</span>GitHub README, 결과 이미지, 시연 영상 정리</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Last updated <time id="updated-date" datetime="">-</time></p>
+      <a href="#top">맨 위로</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
