@@ -7,7 +7,7 @@ Raspberry Pi와 AI 습도 예측 모델을 활용한 스마트 자동 가습기 
 - [Markdown 기획서](./PROJECT_PLAN.md)
 - [HTML 기획서](./project-plan/index.html)
 
-GitHub Pages로 배포하면 아래와 같은 주소로 포트폴리오 페이지처럼 볼 수 있습니다.
+아래와 같은 주소로 포트폴리오 페이지처럼 볼 수 있습니다.
 
 ```text
 https://jeonddg.github.io/raspberrypi_project/project-plan/
