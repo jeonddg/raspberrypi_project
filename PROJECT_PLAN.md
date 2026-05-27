@@ -8,7 +8,7 @@
 
 **Development of an AI-based Indoor Humidity Prediction Smart Humidifier System Using Raspberry Pi**
 
-GitHub 폴더명 추천:
+GitHub 레포지토리명 추천:
 
 ```text
 ai-smart-humidifier
@@ -416,7 +416,7 @@ system_status
 
 실제 데이터를 오래 모으기 어렵기 때문에, 초기에는 규칙 기반으로 생성한 예시 데이터와 실제 센서값을 함께 사용하여 모델을 학습할 수 있다.
 
-## 18. GitHub 폴더 구조
+## 18. GitHub 레포지토리 구조
 
 ```text
 ai-smart-humidifier/
