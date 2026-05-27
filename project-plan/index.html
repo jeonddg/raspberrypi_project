@@ -116,8 +116,8 @@
         <div class="summary-grid">
           <article>
             <span>Project</span>
-            <strong>ai-smart-humidifier</strong>
-            <p>이 프로젝트 전용 GitHub 레포지토리명으로 사용합니다.</p>
+            <strong>10-ai-smart-humidifier</strong>
+            <p>기말 프로젝트 제출용 GitHub 폴더명으로 사용합니다.</p>
           </article>
           <article>
             <span>Core</span>
@@ -255,7 +255,7 @@
           <h2>AI 모델 입력값과 출력값</h2>
           <p>
             딥러닝보다 설명 가능하고 구현 안정적인 머신러닝 모델을 사용합니다.
-            최종 추천 모델은 RandomForestRegressor입니다.
+            최종 추천 모델은 RandomForestRegressor이며, MAE와 Feature Importance로 모델 결과를 검증합니다.
           </p>
         </div>
 
@@ -299,9 +299,39 @@
         </div>
       </section>
 
+      <section id="model-validation" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">06 Model Validation</p>
+          <h2>MAE 평가와 Feature Importance 분석</h2>
+          <p>
+            단순 조건문 프로젝트처럼 보이지 않도록 학습된 모델의 예측 오차와 입력값 중요도를 README와 보고서에 포함합니다.
+          </p>
+        </div>
+
+        <div class="criteria-grid">
+          <article>
+            <h3>MAE 평가</h3>
+            <p>
+              MAE는 예측 습도와 실제 습도의 평균 오차를 의미합니다. 예를 들어 MAE가 2.1이면,
+              예측값이 실제 습도와 평균 약 2.1%p 차이난다는 뜻입니다.
+            </p>
+          </article>
+          <article>
+            <h3>Feature Importance</h3>
+            <ul class="check-list">
+              <li>indoor_humidity</li>
+              <li>humidity_change_5min</li>
+              <li>outdoor_humidity</li>
+              <li>humidifier_state</li>
+              <li>indoor_temp / outdoor_temp / water_state</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
       <section id="hardware" class="section">
         <div class="section-heading">
-          <p class="eyebrow">06 Hardware Structure</p>
+          <p class="eyebrow">07 Hardware Structure</p>
           <h2>하드웨어 구성 및 조립 구조</h2>
           <p>라즈베리파이 기반 회로 연결과 물병형 초음파 미니 가습기 조립 구조를 이미지로 정리했습니다.</p>
         </div>
@@ -321,8 +351,9 @@
               <li>DHT11 또는 DHT22 온습도 센서</li>
               <li>비접촉식 수위센서</li>
               <li>초음파 미니 가습기 모듈</li>
+              <li>물병, 필터심/막대기</li>
               <li>1채널 릴레이 모듈</li>
-              <li>1602 LCD, LED 3개, 능동부저</li>
+              <li>1602 LCD, LED 3개, 330Ω 저항 3개, 능동부저</li>
               <li>외부 5V USB 전원</li>
             </ul>
           </article>
@@ -340,7 +371,7 @@
 
       <section id="output" class="section">
         <div class="section-heading">
-          <p class="eyebrow">07 Output & Dashboard</p>
+          <p class="eyebrow">08 Output & Dashboard</p>
           <h2>LCD, LED, 부저, 웹 대시보드 출력 계획</h2>
           <p>시연 영상에서 프로젝트 완성도를 보여주기 위해 여러 출력 방식을 함께 사용합니다.</p>
         </div>
@@ -377,7 +408,7 @@
 
       <section id="demo" class="section">
         <div class="section-heading">
-          <p class="eyebrow">08 Demo Video Plan</p>
+          <p class="eyebrow">09 Demo Video Plan</p>
           <h2>데모 모드를 활용한 3~5분 시연 구성</h2>
           <p>
             실제 시스템은 10분 후 습도 예측 구조로 설계하지만, 영상에서는 갱신 주기와 기준값을
@@ -408,7 +439,7 @@ else:
 
       <section id="roadmap" class="section">
         <div class="section-heading">
-          <p class="eyebrow">09 Development Roadmap</p>
+          <p class="eyebrow">10 Development Roadmap</p>
           <h2>개발 단계</h2>
           <p>하드웨어 테스트부터 결과 정리까지 최종 구현 흐름을 단계별로 정리했습니다.</p>
         </div>
@@ -426,7 +457,7 @@ else:
 
       <section id="conclusion" class="section">
         <div class="section-heading">
-          <p class="eyebrow">10 Final Summary</p>
+          <p class="eyebrow">11 Final Summary</p>
           <h2>최종 기획 결론</h2>
           <p>
             이 프로젝트는 센서 입력, 외부 API, AI 예측, 하드웨어 제어, LCD 출력, 웹 대시보드,
