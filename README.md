@@ -2,22 +2,15 @@
 
 라즈베리파이를 활용한 AI 기반 실내 습도 예측 스마트 자동 가습 시스템 프로젝트입니다.
 
-이 프로젝트는 실내 온습도와 외부 날씨 API 데이터를 기반으로 AI 모델이 10분 후 실내 습도를 예측하고, 예측값과 비접촉식 수위센서의 물 부족 감지 결과에 따라 물병형 초음파 가습기 모듈을 자동 제어하는 AIoT 시스템을 목표로 합니다.
+실내 온습도와 외부 날씨 API 데이터를 기반으로 AI 모델이 10분 후 실내 습도를 예측하고, 예측값과 비접촉식 수위센서의 물 부족 감지 결과에 따라 물병형 초음파 가습기 모듈을 자동 제어하는 AIoT 시스템을 목표로 합니다.
 
-## Repository
+## Project Page
 
-```text
-ai-smart-humidifier
-```
-
-## Project Plan
-
+- [배포된 기획서 웹페이지](https://raspberrypi-project.vercel.app/)
 - [Markdown 기획서](./PROJECT_PLAN.md)
-- [HTML 기획서](./project-plan/index.html)
+- [HTML 기획서 소스](./project-plan/index.html)
 
-## Web Page
-
-기획서 웹페이지는 `project-plan` 폴더 안의 정적 HTML 파일로 구성되어 있습니다.
+## Web Page Structure
 
 ```text
 project-plan/
