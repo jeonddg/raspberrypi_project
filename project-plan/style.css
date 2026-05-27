@@ -381,7 +381,10 @@ main {
 .hardware-layout,
 .comparison,
 .pipeline,
-.criteria-grid {
+.criteria-grid,
+.water-flow,
+.output-grid,
+.demo-grid {
   display: grid;
   gap: 16px;
 }
@@ -396,7 +399,10 @@ main {
 .pipeline article,
 .decision-grid article,
 .hardware-layout article,
-.criteria-grid article {
+.criteria-grid article,
+.water-flow article,
+.output-grid article,
+.demo-grid article {
   min-height: 100%;
   padding: 24px;
   background: var(--surface);
@@ -407,7 +413,9 @@ main {
 
 .summary-grid span,
 .feature-number,
-.pipeline span {
+.pipeline span,
+.water-flow span,
+.demo-grid span {
   display: inline-flex;
   margin-bottom: 14px;
   color: var(--primary-strong);
@@ -418,7 +426,9 @@ main {
 
 .summary-grid strong,
 .pipeline strong,
-.decision-grid strong {
+.decision-grid strong,
+.water-flow strong,
+.demo-grid strong {
   display: block;
   margin-bottom: 10px;
   font-size: 1.08rem;
@@ -438,6 +448,8 @@ p {
 .comparison li,
 .pipeline p,
 .decision-grid p,
+.water-flow p,
+.demo-grid p,
 .clean-list,
 .check-list,
 td {
@@ -653,6 +665,68 @@ tr:last-child td {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.water-flow {
+  grid-template-columns: 1fr;
+}
+
+.water-flow article {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.water-flow span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  margin: 0;
+  color: #ffffff;
+  background: var(--primary-strong);
+  border-radius: 8px;
+}
+
+.water-flow p {
+  grid-column: 2;
+}
+
+.output-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lcd-preview {
+  color: #d9efff;
+  background: #071c34 !important;
+  border-color: #1e4f85 !important;
+  font-family: "Cascadia Mono", Consolas, monospace;
+}
+
+.lcd-preview span {
+  display: block;
+  margin-bottom: 18px;
+  color: #93c5fd;
+  font-family: Inter, Pretendard, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.lcd-preview code {
+  display: block;
+  color: inherit;
+  font-size: 1.05rem;
+}
+
+.lcd-preview hr {
+  border: 0;
+  border-top: 1px solid #2d5f9b;
+  margin: 18px 0;
+}
+
+.demo-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .site-footer {
   display: flex;
   align-items: center;
@@ -676,7 +750,9 @@ tr:last-child td {
 
   .summary-grid,
   .feature-list,
-  .decision-grid {
+  .decision-grid,
+  .output-grid,
+  .demo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -728,7 +804,9 @@ tr:last-child td {
   .decision-grid,
   .comparison,
   .pipeline,
-  .criteria-grid {
+  .criteria-grid,
+  .output-grid,
+  .demo-grid {
     grid-template-columns: 1fr;
   }
 
