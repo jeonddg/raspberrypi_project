@@ -45,15 +45,17 @@ function updateUiOnScroll() {
   updateActiveNav();
 }
 
-const today = new Date();
-const dateText = new Intl.DateTimeFormat("ko-KR", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-}).format(today);
+if (updatedDate) {
+  const today = new Date();
+  const dateText = new Intl.DateTimeFormat("ko-KR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(today);
 
-updatedDate.textContent = dateText;
-updatedDate.dateTime = today.toISOString().slice(0, 10);
+  updatedDate.textContent = dateText;
+  updatedDate.dateTime = today.toISOString().slice(0, 10);
+}
 
 window.addEventListener("scroll", updateUiOnScroll, { passive: true });
 window.addEventListener("resize", updateUiOnScroll);
