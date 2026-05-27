@@ -8,16 +8,16 @@
 
 **Development of an AI-based Indoor Humidity Prediction Smart Humidifier System Using Raspberry Pi**
 
-GitHub 폴더명:
+GitHub 레포지토리명:
 
 ```text
-10-ai-smart-humidifier
+ai-smart-humidifier
 ```
 
 유튜브 제목:
 
 ```text
-[10] 라즈베리파이5 AI 기반 스마트 자동 가습 시스템 | DHT22 + 수위센서 + LCD1602 + OpenWeatherMap API
+라즈베리파이5 AI 기반 스마트 자동 가습 시스템 | DHT22 + 수위센서 + LCD1602 + OpenWeatherMap API
 ```
 
 ## 2. 프로젝트 한 줄 요약
@@ -792,7 +792,7 @@ Humidifier OFF
 최종 폴더 구조:
 
 ```text
-10-ai-smart-humidifier/
+ai-smart-humidifier/
 │
 ├── README.md
 ├── main.py
