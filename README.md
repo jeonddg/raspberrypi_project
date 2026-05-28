@@ -1,8 +1,8 @@
-# AI Smart Humidifier
+# AIoT Indoor Environment Logger
 
-라즈베리파이를 활용한 AI 기반 실내 습도 예측 스마트 자동 가습 시스템 프로젝트입니다.
+라즈베리파이를 활용한 AIoT 기반 실내 환경 데이터로거 및 이상 알림 시스템 프로젝트입니다.
 
-실내 온습도와 외부 날씨 API 데이터를 기반으로 AI 모델이 10분 후 실내 습도를 예측하고, 예측값과 비접촉식 수위센서의 물 부족 감지 결과에 따라 물병형 초음파 가습기 모듈을 자동 제어하는 AIoT 시스템을 목표로 합니다.
+온습도 센서와 MQ-2 가스 센서로 실내 환경 데이터를 수집하고, 정상 환경 데이터 패턴을 학습한 AI 이상탐지 모델로 평소와 다른 변화를 감지합니다. 이상 상태가 발생하면 LED, 부저, LCD, Flask 웹 대시보드, Telegram 알림으로 사용자에게 경고합니다.
 
 ## Project Page
 
@@ -10,28 +10,48 @@
 - [Markdown 기획서](./PROJECT_PLAN.md)
 - [HTML 기획서 소스](./project-plan/index.html)
 
-## Web Page Structure
+## Repository Name
 
 ```text
-project-plan/
-├── index.html
-├── style.css
-├── script.js
-└── image.png
+aiot-env-anomaly-logger
 ```
 
 ## Key Features
 
-- DHT22 기반 실내 온습도 측정
-- OpenWeatherMap API 외부 날씨 데이터 연동
-- RandomForestRegressor 기반 10분 후 실내 습도 예측
-- XKC-Y25-V 비접촉식 수위센서 기반 물 부족 감지
-- 릴레이를 이용한 초음파 가습기 모듈 자동 제어
-- 물 부족 시 가습기 강제 OFF
-- LCD1602, LED, 부저 상태 표시
+- DHT11/DHT22 기반 온도·습도 측정
+- MQ-2 가스 센서 기반 가스/연기 감지
+- PCF8591 ADC를 이용한 MQ-2 아날로그값 수집 확장
+- CSV 기반 센서 데이터 로깅
+- Isolation Forest 기반 AI 이상탐지
+- NORMAL, WARNING, DANGER 상태 분류
+- LED, 부저, LCD 로컬 경고 출력
 - Flask 웹 대시보드
-- CSV 데이터 로깅, MAE 평가, Feature Importance 분석
+- Telegram 원격 알림
+
+## Planned Structure
+
+```text
+aiot-env-anomaly-logger/
+├── README.md
+├── requirements.txt
+├── main.py
+├── app.py
+├── sensor_reader.py
+├── anomaly_model.py
+├── train_model.py
+├── logger.py
+├── notifier.py
+├── config.py
+├── templates/
+│   └── index.html
+├── static/
+│   └── style.css
+├── data/
+│   └── sensor_log.csv
+└── models/
+    └── isolation_forest.pkl
+```
 
 ## Tech Stack
 
-Raspberry Pi, Python, DHT22, XKC-Y25-V, Relay Module, LCD1602, OpenWeatherMap API, scikit-learn, RandomForestRegressor, Flask, gpiozero, CSV logging
+Raspberry Pi, Python, DHT Sensor, MQ-2, PCF8591 ADC, LCD1602, Flask, Telegram Bot API, scikit-learn, Isolation Forest, CSV logging
